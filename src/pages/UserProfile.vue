@@ -168,7 +168,7 @@ export default {
 <style lang="scss">
 @import "../assets/styles/main.scss";
 .container {
-width: 50%;
+  width: 50%;
 }
 
 .user {
