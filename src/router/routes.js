@@ -5,48 +5,54 @@ const routes = [
     children: [
       {
         path: "/",
-        component: () => import("pages/MainPage.vue"),
+        exact: true,
+        component: () => import("pages/MainPage.vue")
       },
       {
         path: "/tables",
-        component: () => import("pages/TablesPage.vue"),
+        component: () => import("pages/TablesPage.vue")
       },
       {
         path: "/userProfile",
-        component: () => import("pages/UserProfile.vue"),
+        component: () => import("pages/UserProfilePage.vue")
       },
       {
         path: "/calendar",
-        component: () => import("pages/Calendar.vue"),
+        component: () => import("pages/CalendarPage.vue")
       },
       {
         path: "/todo",
-        component: () => import("pages/TodoPage.vue"),
+        component: () => import("pages/TodoPage.vue")
       },
       {
         path: "/map",
-        component: () => import("pages/MapPage.vue"),
+        component: () => import("pages/MapPage.vue")
+      },
+      {
+        path: "/repos",
+        name: "Repo",
+        component: () => import("pages/ReposPage.vue")
       },
       {
         path: "/login",
         name: "login",
-        component: () => import("../components/auth/Login.vue"),
+        component: () => import("../components/auth/Login.vue")
       },
       {
         path: "/register",
         name: "register",
-        component: () => import("../components/auth/Register.vue"),
+        component: () => import("../components/auth/Register.vue")
       },
       {
         path: "/resources",
         name: "resources",
-        component: () => import("../components/resources/Resources.vue"),
+        component: () => import("../components/Resources/Resources.vue"),
         meta: {
-          requiresAuth: true,
-        },
-      },
-    ],
-  },
+          requiresAuth: true
+        }
+      }
+    ]
+  }
 ];
 
 // router.beforeEach((to, from, next) => {
@@ -61,12 +67,11 @@ const routes = [
 //   }
 // });
 
-
 // Always leave this as last one
 if (process.env.MODE !== "ssr") {
   routes.push({
     path: "*",
-    component: () => import("pages/Error404.vue"),
+    component: () => import("pages/Error404.vue")
   });
 }
 

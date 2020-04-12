@@ -18,7 +18,7 @@ class Db {
     return this.db.get(
       `SELECT * FROM userAuth WHERE email = ?`,
       [email],
-      function (err, row) {
+      function(err, row) {
         callback(err, row);
       }
     );
@@ -27,7 +27,7 @@ class Db {
     return this.db.run(
       "INSERT INTO userAuth (name,email,password) VALUES (?,?,?)",
       user,
-      (err) => {
+      err => {
         callback(err);
       }
     );

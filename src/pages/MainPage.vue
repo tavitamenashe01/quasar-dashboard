@@ -1,7 +1,66 @@
 <template>
   <div class="q-mt-md main-page">
     <Header />
-    
+
+    <div class="info-boxes row justify-between">
+      <q-card class="info-box" flat bordered>
+        <q-card-section horizontal>
+          <q-card-section class="info-box__icon col-6">
+            <div class="row justify-center">
+              <q-icon
+                name="person"
+                size="30px"
+                class="info-box__icon--item"
+                color="white"
+              ></q-icon>
+            </div>
+          </q-card-section>
+          <q-card-section class="info-box__content">
+            <p class="info-box__content-title">{{ title }}</p>
+            <b class="info-box__content-desc">{{ desc }}</b>
+          </q-card-section>
+        </q-card-section>
+      </q-card>
+
+      <q-card class="info-box" flat bordered>
+        <q-card-section horizontal>
+          <q-card-section class="info-box__icon col-6">
+            <div class="row justify-center">
+              <q-icon
+                name="person"
+                size="30px"
+                class="info-box__icon--item"
+                color="white"
+              ></q-icon>
+            </div>
+          </q-card-section>
+          <q-card-section class="info-box__content">
+            <p class="info-box__content-title">{{ title }}</p>
+            <b class="info-box__content-desc">{{ desc }}</b>
+          </q-card-section>
+        </q-card-section>
+      </q-card>
+
+      <q-card class="info-box" flat bordered>
+        <q-card-section horizontal>
+          <q-card-section class="info-box__icon col-6">
+            <div class="row justify-center">
+              <q-icon
+                name="person"
+                size="30px"
+                class="info-box__icon--item"
+                color="white"
+              ></q-icon>
+            </div>
+          </q-card-section>
+          <q-card-section class="info-box__content">
+            <p class="info-box__content-title">{{ title }}</p>
+            <b class="info-box__content-desc">{{ desc }}</b>
+          </q-card-section>
+        </q-card-section>
+      </q-card>
+    </div>
+
     <div class="chart">
       <AreaChart />
       <!-- <RandomChart :chart-data="datacollection" />
@@ -15,20 +74,6 @@
       >
         <h1 class="text-white">Dashboard</h1>
       </q-parallax>
-    </div>
-
-    <div class="container">
-      <!-- <div class="banner-container">
-        <q-banner class="bg-orange text-white q-banner" rounded>
-          Random Chart
-        </q-banner>
-      </div> -->
-
-      <div class="q-mt-md banner-container">
-        <q-banner class="bg-orange text-white q-banner" rounded>
-          Map
-        </q-banner>
-      </div>
     </div>
   </div>
 </template>
@@ -47,7 +92,9 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false
-      }
+      },
+      title: "Likes",
+      desc: "90%"
     };
   },
   mounted() {
@@ -90,24 +137,4 @@ export default {
 
 <style lang="scss">
 @import "../assets/styles/main.scss";
-
-.main-page {
-  background: #204051;
-  padding: 0;
-  margin: 0;
-}
-
-.chart {
-  width: 100%;
-  height: 50%;
-}
-
-.darken-overlay div {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  object-fit: cover;
-  background-color: rgba(0, 0, 0, 0.7);
-}
 </style>

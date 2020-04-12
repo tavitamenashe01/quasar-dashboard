@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf ">
+  <q-layout view="lHh Lpr lFf">
     <!-- <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -16,7 +16,6 @@
       </q-toolbar>
     </q-header> -->
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-     
       <q-item class="bg-image" />
       <q-list>
         <q-item-label header class="text-grey-1" style="position: relative">
@@ -56,12 +55,24 @@
           </q-item-section>
         </q-item>
 
+
         <q-item clickable to="/calendar">
           <q-item-section>
             <div class="row col items-center ">
               <q-icon name="event" color="grey-1" size="24px" />
               <div class="q-pl-md">
                 <q-item-label class="link-label">Calendar</q-item-label>
+                <q-menu fit>
+                  <q-list style="min-width: 100px; display: block">
+                    <q-item clickable v-close-popup>
+                      <q-item-section>New tab</q-item-section>
+                    </q-item>
+                    <q-item clickable v-close-popup>
+                      <q-item-section>New incognito tab</q-item-section>
+                    </q-item>
+                    <q-separator />
+                  </q-list>
+                </q-menu>
               </div>
             </div>
           </q-item-section>
@@ -78,8 +89,7 @@
           </q-item-section>
         </q-item>
 
-
-         <q-item clickable to="/map">
+        <q-item clickable to="/map">
           <q-item-section>
             <div class="row col items-center ">
               <q-icon name="place" color="grey-1" size="24px" />
@@ -90,11 +100,42 @@
           </q-item-section>
         </q-item>
 
+         <q-item clickable to="/repos">
+          <q-item-section>
+            <div class="row col items-center ">
+              <q-icon name="favorite" color="grey-1" size="24px" />
+              <div class="q-pl-md">
+                <q-item-label class="link-label">Repos</q-item-label>
+              </div>
+            </div>
+          </q-item-section>
+        </q-item>
 
+        <q-item clickable to="/register">
+          <q-item-section>
+            <div class="row col items-center ">
+              <q-icon name="account_circle" color="grey-1" size="24px" />
+              <div class="q-pl-md">
+                <q-item-label class="link-label">Register</q-item-label>
+              </div>
+            </div>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable to="/login">
+          <q-item-section>
+            <div class="row col items-center ">
+              <q-icon name="lock" color="grey-1" size="24px" />
+              <div class="q-pl-md">
+                <q-item-label class="link-label">Login</q-item-label>
+              </div>
+            </div>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
     <q-page-container>
-      <router-view />
+      <router-view></router-view>
     </q-page-container>
   </q-layout>
 </template>
@@ -105,7 +146,7 @@ export default {
 
   data() {
     return {
-      leftDrawerOpen: false,
+      leftDrawerOpen: false
     };
   }
 };
