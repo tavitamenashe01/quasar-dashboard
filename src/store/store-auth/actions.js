@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export function login({ commit }, user) {
   return new Promise((resolve, reject) => {
     commit("auth_request");
@@ -10,7 +12,6 @@ export function login({ commit }, user) {
         const token = resp.data.token;
         const user = resp.data.user;
         localStorage.setItem("token", token);
-        // Add the following line:
         axios.defaults.headers.common["Authorization"] = token;
         commit("auth_success", token, user);
         resolve(resp);
@@ -35,7 +36,6 @@ export function register({ commit }, user) {
         const token = resp.data.token;
         const user = resp.data.user;
         localStorage.setItem("token", token);
-        // Add the following line:
         axios.defaults.headers.common["Authorization"] = token;
         commit("auth_success", token, user);
         resolve(resp);

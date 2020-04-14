@@ -3,15 +3,7 @@
     <Header />
     <div class="container">
       <div class="q-mt-md banner-container">
-        <!-- <q-banner class="bg-primary text-white q-banner" rounded>
-          Register
-        </q-banner> -->
-
-        <q-form
-          @submit.prevent="registerUser"
-          @reset="onReset"
-          class="q-gutter-md"
-        >
+        <q-form @submit.prevent="register" @reset="onReset" class="q-gutter-md">
           <h4 class="form-title">Register</h4>
 
           <q-input
@@ -79,7 +71,7 @@
 
 <script>
 import Header from "../Header";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
@@ -104,24 +96,24 @@ export default {
         .dispatch("register", data)
         .then(() => this.$router.push("/"))
         .catch(err => console.log(err));
+
+      // if (this.accept !== true) {
+      //   this.$q.notify({
+      //     color: "red-5",
+      //     textColor: "white",
+      //     icon: "warning",
+      //     message: "You need to accept the license and terms"
+      //   });
+      // } else {
+      //   this.$q.notify({
+      //     color: "green-4",
+      //     textColor: "white",
+      //     icon: "cloud_done",
+      //     message: "Submitted"
+      //   });
+      // }
     },
-    registerUser: function() {
-      if (this.accept !== true) {
-        this.$q.notify({
-          color: "red-5",
-          textColor: "white",
-          icon: "warning",
-          message: "You need to accept the license and terms"
-        });
-      } else {
-        this.$q.notify({
-          color: "green-4",
-          textColor: "white",
-          icon: "cloud_done",
-          message: "Submitted"
-        });
-      }
-    },
+
     isValidEmail(val) {
       const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
       return emailPattern.test(val) || "Invalid email";
