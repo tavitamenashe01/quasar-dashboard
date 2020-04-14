@@ -7,7 +7,11 @@
           Register
         </q-banner> -->
 
-        <q-form @submit.prevent="register" @reset="onReset" class="q-gutter-md">
+        <q-form
+          @submit.prevent="registerUser"
+          @reset="onReset"
+          class="q-gutter-md"
+        >
           <h4 class="form-title">Register</h4>
 
           <q-input
@@ -75,6 +79,8 @@
 
 <script>
 import Header from "../Header";
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -88,7 +94,18 @@ export default {
   },
   components: { Header },
   methods: {
-    register: function() {
+    register() {
+      let data = {
+        name: this.name,
+        email: this.email,
+        password: this.password
+      };
+      this.$store
+        .dispatch("register", data)
+        .then(() => this.$router.push("/"))
+        .catch(err => console.log(err));
+    },
+    registerUser: function() {
       if (this.accept !== true) {
         this.$q.notify({
           color: "red-5",

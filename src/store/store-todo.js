@@ -2,9 +2,7 @@ import Vue from "vue";
 import { uid } from "quasar";
 
 const state = {
-  tasks: {
-  },
-  tasksCalendar: {}
+  tasks: {}
 };
 const mutations = {
   updateTask(state, payload) {
@@ -15,9 +13,6 @@ const mutations = {
   },
   addTask(state, payload) {
     Vue.set(state.tasks, payload.id, payload.task);
-  },
-  addTaskCalendar(state, payload) {
-    Vue.set(state.tasksCalendar, payload.id, payload.taskCalendar);
   }
 };
 const actions = {
@@ -34,22 +29,11 @@ const actions = {
       task: task
     };
     commit("addTask", payload);
-  },
-  addTaskCalendar({ commit }, taskCalendar) {
-    let taskId = uid();
-    let payload = {
-      id: taskId,
-      taskCalendar: taskCalendar
-    };
-    commit("addTaskCalendar", payload);
   }
 };
 const getters = {
   tasks: state => {
     return state.tasks;
-  },
-  tasksCalendar: state => {
-    return state.tasksCalendar;
   }
 };
 

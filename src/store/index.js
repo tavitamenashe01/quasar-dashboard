@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import tasks from "./store-tasks"
-// import auth from "./store-auth";
+import todo from "./store-todo";
+import auth from "./store-auth";
 
 
 Vue.use(Vuex)
@@ -30,9 +30,8 @@ Vue.config.productionTip = false;
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      // example
-      tasks,
-      // auth
+      todo,
+      auth,
     },
 
     // enable strict mode (adds overhead!)

@@ -48,6 +48,8 @@
 
 <script>
 import Header from "../Header";
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -58,6 +60,14 @@ export default {
   },
   components: { Header },
   methods: {
+    login() {
+      let email = this.email;
+      let password = this.password;
+      this.$store
+        .dispatch("login", { email, password })
+        .then(() => this.$router.push("/"))
+        .catch(err => console.log(err));
+    },
     isValidEmail(val) {
       const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
       return emailPattern.test(val) || "Invalid email";

@@ -1,6 +1,7 @@
 <template>
   <div class="q-mt-md main-page">
     <Header />
+    {{ info }}
 
     <div class="info-boxes row justify-between">
       <q-card class="info-box" flat bordered>
@@ -61,6 +62,7 @@
       </q-card>
     </div>
 
+
     <div class="chart">
       <AreaChart />
       <!-- <RandomChart :chart-data="datacollection" />
@@ -80,6 +82,8 @@
 
 <script>
 import Header from "../components/Header";
+import axios from 'axios'
+
 // import RandomChart from "../components/ChartsComponent/RandomChart";
 import AreaChart from "../components/ChartsComponent/AreaChart";
 
@@ -88,6 +92,7 @@ export default {
   components: { Header, AreaChart },
   data() {
     return {
+      info: null,
       datacollection: null,
       options: {
         responsive: true,
@@ -98,7 +103,10 @@ export default {
     };
   },
   mounted() {
-    this.fillData();
+    this.fillData(),
+      axios
+        .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+        .then(response => (this.info = response));
   },
   methods: {
     fillData() {
