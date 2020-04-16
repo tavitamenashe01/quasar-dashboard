@@ -1,76 +1,77 @@
 <template>
-  <div class="q-pa-md">
-    <Header />
-    <div class="container">
-      <div class="q-mt-md banner-container">
-        <q-form @submit.prevent="register" @reset="onReset" class="q-gutter-md">
-          <h4 class="form-title">Register</h4>
+  <div class="q-mt-md">
+    <div class="container fixed-center">
+      <q-form @submit.prevent="register" @reset="onReset" class="q-gutter-md">
+        <h4 class="form-title">Register</h4>
 
-          <q-input
-            v-model="name"
-            filled
-            label="Your name *"
-            lazy-rules
-            :rules="[val => (val && val.length > 0) || 'Please type something']"
-          />
-          <q-input
-            filled
-            v-model="email"
-            label="Email *"
-            lazy-rules
-            :rules="[val => !!val || 'Email is missing', isValidEmail]"
-          />
+        <q-input
+          v-model="name"
+          filled
+          label-color="grey-1"
+          :input-style="{ color: '#fff' }"
+          label="Your name *"
+          lazy-rules
+          :rules="[val => (val && val.length > 0) || 'Please type something']"
+        />
+        <q-input
+          filled
+          label-color="grey-1"
+          :input-style="{ color: '#fff' }"
+          v-model="email"
+          label="Email *"
+          lazy-rules
+          :rules="[val => !!val || 'Email is missing', isValidEmail]"
+        />
 
-          <q-input
-            v-model="password"
-            ref="input"
-            filled
-            :type="isPwd ? 'password' : 'text'"
-            label="Password"
-            :rules="[
-              val => val.length >= 6 || 'Please use minimum 6 characters'
-            ]"
-          >
-            <template v-slot:append>
-              <q-icon
-                :name="isPwd ? 'visibility_off' : 'visibility'"
-                class="cursor-pointer"
-                @click="isPwd = !isPwd"
-              />
-            </template>
-          </q-input>
-
-          <q-input
-            ref="input"
-            filled
-            v-model="password_confirmation"
-            :type="isPwd ? 'password' : 'text'"
-            label="Confirm password"
-            :rules="[
-              val => val.length >= 6 || 'Please use minimum 6 characters'
-            ]"
-          />
-
-          <q-toggle v-model="accept" label="I accept the license and terms" />
-
-          <div class="row justify-center">
-            <q-btn label="Sign up" type="submit" color="primary" />
-            <q-btn
-              label="Reset"
-              type="reset"
-              color="primary"
-              flat
-              class="q-ml-sm"
+        <q-input
+          v-model="password"
+          ref="input"
+          filled
+          label-color="grey-1"
+          :input-style="{ color: '#fff' }"
+          :type="isPwd ? 'password' : 'text'"
+          label="Password"
+          :rules="[val => val.length >= 6 || 'Please use minimum 6 characters']"
+        >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              color="grey-1"
+              @click="isPwd = !isPwd"
             />
-          </div>
-        </q-form>
-      </div>
+          </template>
+        </q-input>
+
+        <q-input
+          ref="input"
+          filled
+          label-color="grey-1"
+          :input-style="{ color: '#fff' }"
+          v-model="password_confirmation"
+          :type="isPwd ? 'password' : 'text'"
+          label="Confirm password"
+          :rules="[val => val.length >= 6 || 'Please use minimum 6 characters']"
+        />
+
+        <q-toggle v-model="accept" label="I accept the license and terms" />
+
+        <div class="row justify-center">
+          <q-btn label="Sign up" type="submit" color="primary" />
+          <q-btn
+            label="Reset"
+            type="reset"
+            color="primary"
+            flat
+            class="q-ml-sm"
+          />
+        </div>
+      </q-form>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "../Header";
 import axios from "axios";
 
 export default {
@@ -84,7 +85,6 @@ export default {
       isPwd: false
     };
   },
-  components: { Header },
   methods: {
     register() {
       let data = {
@@ -93,7 +93,7 @@ export default {
         password: this.password
       };
       this.$store
-        .dispatch("register", data)
+        .dispatch("auth/register", data)
         .then(() => this.$router.push("/"))
         .catch(err => console.log(err));
 
@@ -133,8 +133,11 @@ export default {
 @import "src/assets/styles/main.scss";
 
 .container {
-  width: 50% !important ;
-  padding: 10px;
+  width: 45% !important ;
+  padding: 50px;
+  color: #fff;
+  background: #1817309a;
+  border-radius: 5px;
 }
 
 .form-title {

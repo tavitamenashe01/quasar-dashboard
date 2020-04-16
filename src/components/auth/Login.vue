@@ -1,17 +1,13 @@
 <template>
-  <div class="q-pa-md">
-    <Header />
-    <div class="container">
-      <div class="q-mt-md banner-container">
-        <!-- <q-banner class="bg-primary text-white q-banner" rounded>
-          Log in
-        </q-banner> -->
-
+  <div class="q-mt-md">
+    <div class="container fixed-center">
         <q-form @submit.prevent="login" class="q-gutter-md">
           <h4 class="form-title">Sign in</h4>
 
           <q-input
             filled
+            label-color="grey-1"
+            :input-style="{ color: '#fff' }"
             v-model="email"
             label="Email *"
             lazy-rules
@@ -22,6 +18,8 @@
             v-model="password"
             ref="input"
             filled
+            :input-style="{ color: '#fff' }"
+            label-color="grey-1"
             :type="isPwd ? 'password' : 'text'"
             label="Password"
             :rules="[
@@ -32,39 +30,58 @@
               <q-icon
                 :name="isPwd ? 'visibility_off' : 'visibility'"
                 class="cursor-pointer"
+                color="grey-1"
                 @click="isPwd = !isPwd"
               />
             </template>
           </q-input>
 
           <div class="row justify-center">
-            <q-btn label="sign in" type="submit" color="primary" />
+            <div class="col">
+              <q-btn label="sign in" type="submit" color="primary" />
+            </div>
+            <div class="row justify-center">
+              <div class="col">
+                <q-btn
+                  color="primary"
+                  push
+                  icon="account_circle"
+                  label="Login with Facebook"
+                  size="md"
+                  @click="auth('facebook')"
+                />
+              </div>
+            </div>
           </div>
         </q-form>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Header from "../Header";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
     return {
       email: "",
       password: "",
-      isPwd: false
+      isPwd: true
     };
   },
-  components: { Header },
   methods: {
+    auth(network) {
+      this.$hello(network)
+        .login({ scope: "friends" })
+        .then(() => {
+          this.$router.push("profile");
+        });
+    },
     login() {
       let email = this.email;
       let password = this.password;
       this.$store
-        .dispatch("login", { email, password })
+        .dispatch("auth/login", { email, password })
         .then(() => this.$router.push("/"))
         .catch(err => console.log(err));
     },
@@ -80,8 +97,11 @@ export default {
 @import "src/assets/styles/main.scss";
 
 .container {
-  width: 50% !important ;
-  padding: 10px;
+  width: 45% !important ;
+  padding: 50px;
+  border-radius: 5px;
+  color: #fff;
+  background: #1817309a;
 }
 
 .form-title {

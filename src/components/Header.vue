@@ -22,14 +22,14 @@
               <q-icon name="dashboard" color="grey-7" size="24px" />
             </q-item-section>
           </q-item>
-          <q-item to="/notification">
+          <q-item to="/register">
             <q-item-section>
-              <q-icon name="notifications" color="grey-7" size="24px" />
+              <q-icon name="account_circle" color="grey-7" size="24px" />
             </q-item-section>
           </q-item>
-          <q-item to="/userProfile">
+          <q-item to="/login">
             <q-item-section>
-              <q-icon name="person" color="grey-7" size="24px" />
+              <q-icon name="lock" color="grey-7" size="24px" />
             </q-item-section>
           </q-item>
         </div>

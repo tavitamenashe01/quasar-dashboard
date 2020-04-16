@@ -4,7 +4,6 @@ import Vuex from 'vuex'
 import todo from "./store-todo";
 import auth from "./store-auth";
 
-
 Vue.use(Vuex)
 
 import * as VueGoogleMaps from "vue2-google-maps";

@@ -55,7 +55,6 @@
           </q-item-section>
         </q-item>
 
-
         <q-item clickable to="/calendar">
           <q-item-section>
             <div class="row col items-center ">
@@ -100,7 +99,7 @@
           </q-item-section>
         </q-item>
 
-         <q-item clickable to="/repos">
+        <q-item clickable to="/repos">
           <q-item-section>
             <div class="row col items-center ">
               <q-icon name="favorite" color="grey-1" size="24px" />
@@ -148,7 +147,10 @@ export default {
     return {
       leftDrawerOpen: false
     };
-  }
+  },
+  // mounted() {
+  //   this.$refs.layout.hideLeft();
+  // }
 };
 </script>
 

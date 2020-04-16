@@ -41,7 +41,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("tasks", ["tasks"])
+    ...mapGetters("todo/tasks", ["todo/tasks"])
   },
   created() {
     setTimeout(() => (this.elementVisible = false), 5000);

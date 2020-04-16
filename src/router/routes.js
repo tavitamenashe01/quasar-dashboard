@@ -6,6 +6,7 @@ const routes = [
       {
         path: "/",
         exact: true,
+        name: "Home",
         component: () => import("pages/MainPage.vue")
       },
       {
@@ -29,19 +30,14 @@ const routes = [
         component: () => import("pages/MapPage.vue")
       },
       {
+        path: "/profile",
+        component: () => import("pages/ProfilePage.vue")
+      },
+
+      {
         path: "/repos",
         name: "Repo",
         component: () => import("pages/ReposPage.vue")
-      },
-      {
-        path: "/login",
-        name: "login",
-        component: () => import("../components/auth/Login.vue")
-      },
-      {
-        path: "/register",
-        name: "register",
-        component: () => import("../components/auth/Register.vue")
       },
       {
         path: "/resources",
@@ -50,6 +46,26 @@ const routes = [
         meta: {
           requiresAuth: true
         }
+      }
+    ]
+  },
+  {
+    path: "/register",
+    component: () => import("layouts/RegisterLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("../components/auth/Register.vue")
+      }
+    ]
+  },
+  {
+    path: "/login",
+    component: () => import("layouts/LoginLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("../components/auth/Login.vue")
       }
     ]
   }

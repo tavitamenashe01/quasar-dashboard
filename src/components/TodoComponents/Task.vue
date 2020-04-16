@@ -56,7 +56,7 @@ export default {
     EditTask
   },
   methods: {
-    ...mapActions("tasks", ["updateTask", "deleteTask"]),
+    ...mapActions("todo/tasks", ["todo/updateTask", "todo/deleteTask"]),
     promptDeleteTask(id) {
       this.deleteTask(id);
     }

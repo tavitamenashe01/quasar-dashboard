@@ -1,7 +1,6 @@
 <template>
   <div class="q-mt-md main-page">
     <Header />
-    {{ info }}
 
     <div class="info-boxes row justify-between">
       <q-card class="info-box" flat bordered>
@@ -65,8 +64,6 @@
 
     <div class="chart">
       <AreaChart />
-      <!-- <RandomChart :chart-data="datacollection" />
-      <q-btn color="primary" @click="fillData()">Randomize</q-btn> -->
     </div>
 
     <div class=" darken-overlay">
@@ -82,9 +79,7 @@
 
 <script>
 import Header from "../components/Header";
-import axios from 'axios'
 
-// import RandomChart from "../components/ChartsComponent/RandomChart";
 import AreaChart from "../components/ChartsComponent/AreaChart";
 
 export default {
@@ -101,44 +96,6 @@ export default {
       title: "Likes",
       desc: "90%"
     };
-  },
-  mounted() {
-    this.fillData(),
-      axios
-        .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-        .then(response => (this.info = response));
-  },
-  methods: {
-    fillData() {
-      this.datacollection = {
-        labels: [this.getRandomInt(), this.getRandomInt()],
-        datasets: [
-          {
-            label: "Data One",
-            backgroundColor: "#4d4646",
-            data: [this.getRandomInt(), this.getRandomInt()]
-          },
-          {
-            label: "Data Two",
-            backgroundColor: "#5b5656",
-            data: [this.getRandomInt(), this.getRandomInt()]
-          },
-          {
-            label: "Data Three",
-            backgroundColor: "#7fcd91",
-            data: [this.getRandomInt(), this.getRandomInt()]
-          },
-          {
-            label: "Data Four",
-            backgroundColor: "#f5eaea",
-            data: [this.getRandomInt(), this.getRandomInt()]
-          }
-        ]
-      };
-    },
-    getRandomInt() {
-      return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
-    }
   }
 };
 </script>
