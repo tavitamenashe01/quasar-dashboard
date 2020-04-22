@@ -5,14 +5,35 @@
         <h4 class="form-title">Register</h4>
 
         <q-input
-          v-model="name"
+          v-model="firstName"
           filled
           label-color="grey-1"
           :input-style="{ color: '#fff' }"
-          label="Your name *"
+          label="First name *"
           lazy-rules
           :rules="[val => (val && val.length > 0) || 'Please type something']"
         />
+
+        <q-input
+          v-model="lastName"
+          filled
+          label-color="grey-1"
+          :input-style="{ color: '#fff' }"
+          label="Last name *"
+          lazy-rules
+          :rules="[val => (val && val.length > 0) || 'Please type something']"
+        />
+
+        <q-input
+          v-model="userName"
+          filled
+          label-color="grey-1"
+          :input-style="{ color: '#fff' }"
+          label="User name *"
+          lazy-rules
+          :rules="[val => (val && val.length > 0) || 'Please type something']"
+        />
+
         <q-input
           filled
           label-color="grey-1"
@@ -43,17 +64,6 @@
           </template>
         </q-input>
 
-        <q-input
-          ref="input"
-          filled
-          label-color="grey-1"
-          :input-style="{ color: '#fff' }"
-          v-model="password_confirmation"
-          :type="isPwd ? 'password' : 'text'"
-          label="Confirm password"
-          :rules="[val => val.length >= 6 || 'Please use minimum 6 characters']"
-        />
-
         <q-toggle v-model="accept" label="I accept the license and terms" />
 
         <div class="row justify-center">
@@ -77,12 +87,13 @@ import axios from "axios";
 export default {
   data() {
     return {
-      name: "",
+      firstName: "",
+      lastName: "",
+      userName: "",
       email: "",
       password: "",
-      password_confirmation: "",
       accept: false,
-      isPwd: false
+      isPwd: true
     };
   },
   methods: {

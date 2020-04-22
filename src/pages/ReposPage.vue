@@ -13,8 +13,9 @@
       </div>
       <div class="row justify-between">
         <div class="card" v-for="post in filteredList" :key="post.id">
-          <a v-bind:href="post.link" target="_blank">
-            <img v-bind:src="post.img" />
+          
+          <a :href="post.link" target="_blank">
+            <img class="card-img" :src="post.img" />
             <small>posted by: {{ post.author }}</small>
             {{ post.title }}
           </a>
@@ -97,7 +98,7 @@ export default {
       ]
     };
   },
-  components: {Header},
+  components: { Header },
   computed: {
     filteredList() {
       return this.postList.filter(post => {
@@ -109,7 +110,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'src/assets/styles/main.scss';
+@import "src/assets/styles/main.scss";
 
 .card {
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px,
@@ -128,8 +129,10 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    img {
+    .card-img {
       height: 100px;
+      border: 1px solid white;
+      border-radius: 50%;
     }
     small {
       font-size: 10px;

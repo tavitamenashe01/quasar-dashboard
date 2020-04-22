@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import todo from "./store-todo";
 import auth from "./store-auth";
+import newTodo from "./newTodo";
 
 Vue.use(Vuex)
 
@@ -31,6 +32,7 @@ export default function (/* { ssrContext } */) {
     modules: {
       todo,
       auth,
+      newTodo
     },
 
     // enable strict mode (adds overhead!)

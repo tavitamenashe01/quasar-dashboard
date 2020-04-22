@@ -53,6 +53,9 @@
               </div>
             </div>
           </div>
+          <div class="q-pt-md col row justify-center">
+            <a class="registerNow-link" href="/register">You dont have accont? Register now.</a>
+          </div>
         </q-form>
       </div>
     </div>
@@ -106,5 +109,9 @@ export default {
 
 .form-title {
   text-align: center;
+}
+
+.registerNow-link {
+  color: #fff;
 }
 </style>

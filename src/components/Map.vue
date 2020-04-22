@@ -1,10 +1,11 @@
 <template>
-  <div class="container">
-    <h6>
-      Google Map
-    </h6>
+  <div class="map-page">
+    <div class="container">
+      <h6>
+        Google Map
+      </h6>
 
-    <!-- <ul class="list-inline">
+      <!-- <ul class="list-inline">
       <li class="list-inline-item">
         <a
           href="#"
@@ -34,7 +35,8 @@
       </li>
     </ul> -->
 
-    <gmap-map v-bind="options" id="map"> </gmap-map>
+      <gmap-map v-bind="options" id="map"> </gmap-map>
+    </div>
   </div>
 </template>
 
@@ -59,9 +61,9 @@ export default {
     google: gmapApi
   },
   methods: {
-    myclick() {
-      console.log(1111111111111111);
-    }
+    // myclick() {
+    //   console.log(1111111111111111);
+    // }
   }
 };
 </script>
@@ -72,4 +74,7 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
+// body {
+//   background-color: rgb(236, 240, 245);
+// }
 </style>

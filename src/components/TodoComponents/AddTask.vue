@@ -62,7 +62,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions("todo/tasks", ["todo/addTask"]),
+    ...mapActions("tasks", ["addTask"]),
     submitForm() {
       this.$refs.name.validate();
       if (!this.$refs.name.hasError) {

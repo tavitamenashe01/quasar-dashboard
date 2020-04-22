@@ -6,30 +6,40 @@
           >Dashboard</q-item
         >
         <div class="row">
-          <!-- <q-input
-            borderless
-            dense
-            debounce="300"
-            color="primary"
-            placeholder="Search"
-          >
-            <template v-slot:append>
-              <q-icon name="search" />
-            </template>
-          </q-input> -->
           <q-item to="/">
             <q-item-section>
               <q-icon name="dashboard" color="grey-7" size="24px" />
+              <q-tooltip>
+                Dashboard
+              </q-tooltip>
             </q-item-section>
           </q-item>
           <q-item to="/register">
             <q-item-section>
               <q-icon name="account_circle" color="grey-7" size="24px" />
+              <q-tooltip>
+                Register
+              </q-tooltip>
             </q-item-section>
           </q-item>
+
+          <a @click="logout"
+            ><q-item>
+              <q-item-section>
+                <q-icon name="person" color="grey-7" size="24px" />
+                <q-tooltip>
+                  Logout
+                </q-tooltip>
+              </q-item-section>
+            </q-item>
+          </a>
+
           <q-item to="/login">
             <q-item-section>
               <q-icon name="lock" color="grey-7" size="24px" />
+              <q-tooltip>
+                Login
+              </q-tooltip>
             </q-item-section>
           </q-item>
         </div>
@@ -40,11 +50,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-
-      
-    };
+  methods: {
+    logout: function() {
+      this.$store.dispatch("auth/logout").then(() => {
+        this.$router.push("/login");
+      });
+    }
   }
 };
 </script>

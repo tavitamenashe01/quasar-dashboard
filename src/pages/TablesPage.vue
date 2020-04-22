@@ -3,20 +3,84 @@
     <Header />
 
     <div class="q-pa-md">
+      <div class="col q-mb-md">
+        <q-table
+          title="Treats"
+          :data="data"
+          :columns="columns"
+          row-key="name"
+          :filter="filter"
+          ref="table"
+        >
+          <template v-slot:top>
+            <q-input
+              borderless
+              dense
+              debounce="300"
+              color="primary"
+              v-model="filter"
+              placeholder="Search"
+            >
+              <template v-slot:append>
+                <q-icon name="search" />
+              </template>
+            </q-input>
+
+            <q-space />
+
+            <span class="q-mr-xl">Select:</span>
+            <q-select
+              borderless
+              v-model="rowsPerPage"
+              :options="options"
+              @input="$refs.table.setPagination({ rowsPerPage: rowsPerPage })"
+              class="q-mr-md"
+              style="width:60px"
+            ></q-select>
+          </template>
+        </q-table>
+      </div>
+
+      <div class="col q-mb-md">
+        <q-table
+          card-class="bg-blue-grey-9 text-grey-1"
+          table-class="text-grey-1"
+          table-header-class="text-grey-1"
+          title="Treats"
+          :data="data"
+          :columns="columns"
+          row-key="name"
+          selection="multiple"
+          :selected.sync="selected"
+        >
+          <!-- <template v-slot:top>
+          Top
+        </template>
+        <template v-slot:top-row>
+          <q-tr>
+            <q-td colspan="100%">
+              Top row
+            </q-td>
+          </q-tr>
+        </template> -->
+        </q-table>
+      </div>
+
       <q-table
+        grid
+        card-class="bg-primary text-white"
         title="Treats"
         :data="data"
         :columns="columns"
         row-key="name"
         :filter="filter"
-        ref="table"
+        hide-header
       >
-        <template v-slot:top>
+        <template v-slot:top-right>
           <q-input
             borderless
             dense
             debounce="300"
-            color="primary"
             v-model="filter"
             placeholder="Search"
           >
@@ -24,18 +88,6 @@
               <q-icon name="search" />
             </template>
           </q-input>
-
-          <q-space />
-
-          <span class="q-mr-xl">Select:</span>
-          <q-select
-            borderless
-            v-model="rowsPerPage"
-            :options="options"
-            @input="$refs.table.setPagination({ rowsPerPage: rowsPerPage })"
-            class="q-mr-md"
-            style="width:60px"
-          ></q-select>
         </template>
       </q-table>
     </div>
@@ -48,6 +100,8 @@ export default {
   data() {
     return {
       filter: "",
+      selected: [],
+
       options: ["1", "3", "5", "10"],
       rowsPerPage: 5,
 

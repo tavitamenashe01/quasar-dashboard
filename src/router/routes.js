@@ -30,8 +30,12 @@ const routes = [
         component: () => import("pages/MapPage.vue")
       },
       {
+        path: "/newtodo",
+        component: () => import("pages/NewToDoPage.vue")
+      },
+      {
         path: "/profile",
-        component: () => import("pages/ProfilePage.vue")
+        component: () => import("../components/auth/ProfilePage.vue")
       },
 
       {

@@ -58,7 +58,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions("todo/tasks", ["todo/updateTask"]),
+    ...mapActions("tasks", ["updateTask"]),
     submitForm() {
       this.$refs.name.validate();
       if (!this.$refs.name.hasError) {

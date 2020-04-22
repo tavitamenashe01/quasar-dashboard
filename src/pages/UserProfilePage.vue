@@ -1,6 +1,7 @@
 <template>
   <div class="q-pa-md">
     <Header />
+    <Profile />
     <div class="container">
       <div class="q-mt-md banner-container">
         <q-banner class="bg-primary text-white q-banner" rounded>
@@ -110,11 +111,14 @@
         dolorem voluptas maxime.
       </div>
     </div>
+
+    <!-- CurrentUserToken eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNTg3MjY3Nzg2LCJleHAiOjE1ODczNTQxODZ9.5rhhQWemjZ1uEyCGHwtWAf1S4lBJU6uYxYYPPTdoDNg -->
   </div>
 </template>
 
 <script>
 import Header from "../components/Header";
+import Profile from "../components/auth/ProfilePage";
 export default {
   data() {
     return {
@@ -160,7 +164,8 @@ export default {
   },
 
   components: {
-    Header
+    Header,
+    Profile
   }
 };
 </script>
