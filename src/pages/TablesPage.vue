@@ -1,7 +1,6 @@
 <template>
   <div class="q-pt-md">
     <Header />
-
     <div class="q-pa-md">
       <div class="col q-mb-md">
         <q-table
@@ -101,7 +100,6 @@ export default {
     return {
       filter: "",
       selected: [],
-
       options: ["1", "3", "5", "10"],
       rowsPerPage: 5,
 
@@ -251,8 +249,4 @@ export default {
 };
 </script>
 
-<style scoped>
-body {
-  background: black !important;
-}
-</style>
+

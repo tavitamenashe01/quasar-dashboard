@@ -2,7 +2,7 @@
   <q-item>
     <q-item-section>
       <div class="row justify-between">
-        <q-item text-subtitle6 class="header-title justify-center"
+        <q-item text-subtitle6 class="header-title flex flex-center"
           >Dashboard</q-item
         >
         <div class="row">
@@ -60,17 +60,14 @@ export default {
 };
 </script>
 
-<style scoped>
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
+<style lang="scss">
+@import "src/assets/styles/main.scss";
 
 .link-label {
   font-size: 16px;
 }
 
 .header-title {
-  color: #52585f;
+  color: $text-grey;
 }
 </style>

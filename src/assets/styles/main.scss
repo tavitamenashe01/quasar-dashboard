@@ -1,10 +1,14 @@
-@import 'banner';
-@import 'mainPage';
+@import "var";
+@import "banner";
+@import "mainPage";
+@import "searchReposPage";
 
 .container {
   width: 90%;
   margin: 0 auto;
 }
 
-
-
+ul,
+li {
+  list-style: none;
+}

@@ -1,0 +1,195 @@
+.header {
+  margin-top: 30px;
+}
+
+.nav-wrapper {
+    margin-top: 80px;
+}
+
+.nav-wrapper__title {
+  padding: 0 50px;
+  margin-top: 60px;
+}
+
+.date {
+  margin-bottom: 20px;
+}
+.circle {
+  width: 50px;
+}
+.progress,
+.collection,
+.pagination,
+.error {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+ul.collection li .left-cont a {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+ul.collection li .left-cont p {
+  font-size: 12px;
+}
+
+ul.collection li ul {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+ul.collection li ul li {
+  font-size: 12px;
+}
+
+ul.collection li ul li p,
+ul.collection li ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #9e9e9e;
+}
+
+ul.collection li ul li i {
+  margin-right: 10px;
+}
+
+ul.collection li ul li i.fa-star {
+  color: #fdd835;
+}
+
+ul.collection li ul li + li {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  ul.collection li ul li + li {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  ul.collection li ul li.watch {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  ul.collection li ul li.date {
+    margin-left: 0;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  ul.collection li ul li.date {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-top: 10px;
+  }
+  ul.collection li ul li.date span {
+    margin-left: 0;
+  }
+}
+
+ul.collection li ul li .badge {
+  min-height: 22px;
+  height: 100%;
+}
+
+ul.collection li ul li .badge:after {
+  content: "";
+}
+
+ul.collection li ul li p.JavaScript i {
+  color: #1b5e20;
+}
+
+ul.collection li ul li p.Vue i {
+  color: #009688;
+}
+
+ul.collection li ul li p.CSS i {
+  color: #2196f3;
+}
+
+ul.collection li ul li p.SASS i {
+  color: #e91e63;
+}
+
+ul.collection li ul li p.HTML i {
+  color: #ff5722;
+}
+
+ul.collection li ul li p.PHP i,
+ul.collection li ul li p.TypeScript i {
+  color: #0d47a1;
+}
+
+ul.collection li ul li p.Ruby i {
+  color: #b71c1c;
+}
+
+ul.pagination {
+  margin-top: 40px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+ul.pagination li {
+  height: auto;
+}
+ul.pagination li + li {
+  margin-left: 5px;
+}
+ul.pagination button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+ul.pagination li.active button {
+  color: #fff;
+}
+
+ul.pagination li:nth-last-child(n + 12) {
+  display: none;
+}
+ul.pagination li:first-child {
+  display: block;
+}
+li.disabled > button {
+  cursor: not-allowed;
+}
+
+.toast {
+  background-color: #ef5350 !important;
+}
+.toast > button {
+  color: #fff !important;
+}

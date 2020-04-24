@@ -10,6 +10,8 @@
     <!-- <q-list v-if="Object.keys(tasks).length" bordered separator> -->
       <Task v-for="(task, key) in tasks" :task="task" :key="key" :id="key" />
     <!-- </q-list> -->
+
+    
     <div class="absolute-bottom text-center q-mb-lg">
       <q-btn
         @click="showAddTask = true"

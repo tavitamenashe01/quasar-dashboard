@@ -11,9 +11,25 @@
           label="Search title"
         />
       </div>
+    
+      <div class="" v-for="(infos, index) in info" :key="index">
+        <div class="card-item col-4">
+        <div class="card-item__header">{{ infos.name}} Repo</div>
+        <div class="card-item__image">
+          <img class="card-img" :src="infos.avatar_url" />
+        </div>
+        <div class="card-item__footer">
+          <div class="row justify-between">
+            <p>{{ infos.stargazers_count }} star</p>
+            <q-btn>Visit</q-btn>
+            <p>{{ infos.forks_count }} forks</p>
+          </div>
+        </div>
+      </div>
+      </div>
+
       <div class="row justify-between">
         <div class="card" v-for="post in filteredList" :key="post.id">
-          
           <a :href="post.link" target="_blank">
             <img class="card-img" :src="post.img" />
             <small>posted by: {{ post.author }}</small>
@@ -35,11 +51,13 @@ class Post {
   }
 }
 import Header from "../components/Header";
+import axios from 'axios'
 
 export default {
   data() {
     return {
       search: "",
+      info: null,
       postList: [
         new Post(
           "Vue.js",
@@ -97,6 +115,12 @@ export default {
         )
       ]
     };
+  },
+  mounted() {
+    axios
+    .get("https://api.github.com/search/repositories?q=stars:150000..300000").then(
+      response => (this.info = response)
+    );
   },
   components: { Header },
   computed: {

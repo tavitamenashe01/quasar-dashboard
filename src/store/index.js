@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import todo from "./store-todo";
+
+import * as VueGoogleMaps from "vue2-google-maps";
 import auth from "./store-auth";
-import newTodo from "./newTodo";
+
 
 Vue.use(Vuex)
 
-import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -30,11 +30,8 @@ Vue.config.productionTip = false;
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      todo,
       auth,
-      newTodo
     },
-
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV

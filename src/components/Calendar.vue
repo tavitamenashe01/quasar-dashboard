@@ -11,9 +11,7 @@
           />
         </div>
       </template>
-        <!-- <q-list v-if="Object.keys(tasksCalendar).length" bordered separator>
-      <Task v-for="(taskCal, key) in tasksCalendar" :taskCal="taskCal" :key="key" :id="key" />
-    </q-list> -->
+    
       <template v-slot:after>
         <q-tab-panels
           v-model="date"
@@ -87,7 +85,6 @@
 
 <script>
 import AddTaskCalendar from "../components/AddTaskCalendar";
-// import Task from "../components/Task";
 
 export default {
   data() {
@@ -100,11 +97,7 @@ export default {
   },
   components: {
     AddTaskCalendar,
-    // Task
   },
-//     computed: {
-//     ...mapGetters("tasksCalendar", ["tasksCalendar"])
-//   },
 };
 </script>
 

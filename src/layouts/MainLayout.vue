@@ -1,23 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <!-- <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
-        <q-toolbar-title>
-          Dashboard
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-header> -->
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <div class="wrapper">
-        <!-- <q-item /> -->
         <q-list>
           <q-item-label
             header
@@ -74,17 +58,6 @@
                 <q-icon name="event" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">Calendar</q-item-label>
-                  <q-menu fit>
-                    <q-list style="min-width: 100px; display: block">
-                      <q-item clickable v-close-popup>
-                        <q-item-section>New tab</q-item-section>
-                      </q-item>
-                      <q-item clickable v-close-popup>
-                        <q-item-section>New incognito tab</q-item-section>
-                      </q-item>
-                      <q-separator />
-                    </q-list>
-                  </q-menu>
                 </div>
               </div>
             </q-item-section>
@@ -101,19 +74,6 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable to="/newtodo">
-            <q-item-section>
-              <div class="row col items-center">
-                <q-icon name="dashboard" color="grey-1" size="24px" />
-                <div class="q-pl-md">
-                  <q-item-label class="link-label">New To Do</q-item-label>
-                </div>
-              </div>
-            </q-item-section>
-          </q-item>
-          <!-- <q-item-label header class="text-grey-1 nav-label">
-            Pages
-          </q-item-label> -->
 
           <q-item clickable to="/map">
             <q-item-section>

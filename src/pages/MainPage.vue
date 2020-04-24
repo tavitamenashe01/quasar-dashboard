@@ -7,10 +7,10 @@
       <div class="info-boxes row justify-between">
         <div class="info-container" v-for="(info, key) in infos" :key="key">
           <q-card class="info-box" flat bordered>
-            <q-card-section horizontal>
+            <q-card-section horizontal class="info-box__card">
               <q-card-section class="info-box__icon flex flex-center col-6">
                 <div class="row justify-center">
-                  <q-icon name="person" size="30px" color="white"></q-icon>
+                  <q-icon name="person" size="30px" color="white" />
                 </div>
               </q-card-section>
               <q-card-section class="info-box__content flex flex-center">
@@ -32,7 +32,7 @@
         class="parallax"
         src="https://casetext.com/blog/wp-content/uploads/2020/01/Canva-Person-Using-Macbook-Pro.jpg"
       >
-        <h1 class="text-white">Your Dashboard</h1>
+        <h1 class="parallax-title text-white">Your Dashboard</h1>
       </q-parallax>
     </div>
 
@@ -43,7 +43,7 @@
           :data="pieChartData"
           :options="pieChartOptions"
         />
-        <div class="col-6">
+        <div class="col-5">
           <q-card class="my-card">
             <q-card-section>
               <h4>Your Pie Chart</h4>
@@ -78,7 +78,6 @@ export default {
         maintainAspectRatio: false
       },
       infos: null,
-
       desc: "90%",
       pieChartOptions: {
         hoverBorderWidth: 20

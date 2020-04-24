@@ -59,7 +59,7 @@ module.exports = function(ctx) {
       directives: ["ClosePopup"],
 
       // Quasar plugins
-      plugins: ["Notify"],
+      plugins: ["Notify", "Loading"],
       config: {
         // notify: {
         //   /* look at QUASARCONFOPTIONS from the API card (bottom of page) */

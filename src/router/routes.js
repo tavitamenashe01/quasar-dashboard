@@ -30,10 +30,6 @@ const routes = [
         component: () => import("pages/MapPage.vue")
       },
       {
-        path: "/newtodo",
-        component: () => import("pages/NewToDoPage.vue")
-      },
-      {
         path: "/profile",
         component: () => import("../components/auth/ProfilePage.vue")
       },
@@ -42,6 +38,11 @@ const routes = [
         path: "/repos",
         name: "Repo",
         component: () => import("pages/ReposPage.vue")
+      },
+      {
+        path: "/searchRepos",
+        name: "SearchRepo",
+        component: () => import("pages/SearchReposPage.vue")
       },
       {
         path: "/resources",

@@ -4,7 +4,7 @@
 }
 .pie-chart {
   width: 400px;
-  margin-top: 30px;
+  margin: 30px auto; 
 }
 
 .chart {
@@ -15,14 +15,14 @@
 .info-boxes {
   margin-bottom: 30px;
   &__title {
-    color: #fff;
+    color: $white;
     text-align: center;
   }
   .info-box {
     width: 100%;
     max-width: 250px;
     &__icon {
-      background: #60c2ef;
+      background: $light-blue;
       min-height: 140px;
       height: 100%;
     }
@@ -38,19 +38,44 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+@media screen and (max-width: 1024px) {
+  .info-boxes .info-box {
+    max-width: 200px;
+    &__icon {
+      max-height: 100%;
+    }
+    &__content {
+      padding-bottom: 0;
+    }
+  }
+   .pie-chart {
+    width: 300px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .info-boxes .info-box {
-    max-width: 90%;
-    margin: 10px auto;
+    max-width: 100%;
+    margin: 10px 0;
+    &__card {
+      width: 100%;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
   }
   .pie-chart {
     width: 250px;
   }
-  .col-6 {
-  //  max-width: 50px;
-   width: 100px;
+  .col-5 {
+    width: 100% !important;
   }
   .info-container {
-    width: 300px;
+    width: 100%;
+  }
+  .parallax-title {
+    font-size: 40px;
   }
 }

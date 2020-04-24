@@ -23,29 +23,6 @@
         :events="calendarEvents"
         @dateClick="handleDateClick"
       />
-      <q-btn label="Prompt" color="primary" @click="prompt = true" />
-
-      <q-dialog v-model="prompt" persistent>
-        <q-card style="min-width: 350px">
-          <q-card-section>
-            <div class="text-h6">Your address</div>
-          </q-card-section>
-
-          <q-card-section class="q-pt-none">
-            <q-input
-              dense
-              v-model="address"
-              autofocus
-              @keyup.enter="prompt = false"
-            />
-          </q-card-section>
-
-          <q-card-actions align="right" class="text-primary">
-            <q-btn flat label="Cancel" v-close-popup />
-            <q-btn flat label="Add address" v-close-popup />
-          </q-card-actions>
-        </q-card>
-      </q-dialog>
     </div>
   </div>
 </template>
@@ -64,9 +41,6 @@ export default {
   },
   data: function() {
     return {
-      prompt: false,
-
-      address: "",
       calendarPlugins: [
         dayGridPlugin,
         timeGridPlugin,
@@ -106,8 +80,8 @@ export default {
 .calendar-title {
   font-size: 25px;
   padding: 5px 0;
-  background: $primary;
-  color: #ffffff;
+  background: $teal-10;
+  color: $white;
   border-radius: 5px;
   text-align: center;
 }
