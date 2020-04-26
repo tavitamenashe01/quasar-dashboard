@@ -66,15 +66,9 @@
 
         <q-toggle v-model="accept" label="I accept the license and terms" />
 
-        <div class="row justify-center">
+        <div class="auth-btn row justify-center">
           <q-btn label="Sign up" type="submit" color="primary" />
-          <q-btn
-            label="Reset"
-            type="reset"
-            color="primary"
-            flat
-            class="q-ml-sm"
-          />
+          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
         </div>
       </q-form>
     </div>
@@ -89,7 +83,7 @@ export default {
     return {
       firstName: "",
       lastName: "",
-      userName: "",
+      userName: null,
       email: "",
       password: "",
       accept: false,
@@ -153,5 +147,22 @@ export default {
 
 .form-title {
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
+  .auth-btn button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .auth-btn {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-title {
+    margin-top: 80px;
+  }
 }
 </style>

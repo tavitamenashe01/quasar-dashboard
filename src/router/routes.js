@@ -21,10 +21,7 @@ const routes = [
         path: "/calendar",
         component: () => import("pages/CalendarPage.vue")
       },
-      {
-        path: "/todo",
-        component: () => import("pages/TodoPage.vue")
-      },
+ 
       {
         path: "/map",
         component: () => import("pages/MapPage.vue")
@@ -35,23 +32,23 @@ const routes = [
       },
 
       {
-        path: "/repos",
-        name: "Repo",
-        component: () => import("pages/ReposPage.vue")
+        path: "/cards",
+        name: "Cards",
+        component: () => import("pages/CardsPage.vue")
       },
       {
         path: "/searchRepos",
         name: "SearchRepo",
         component: () => import("pages/SearchReposPage.vue")
       },
-      {
-        path: "/resources",
-        name: "resources",
-        component: () => import("../components/Resources/Resources.vue"),
-        meta: {
-          requiresAuth: true
-        }
-      }
+      // {
+      //   path: "/resources",
+      //   name: "resources",
+      //   component: () => import("../components/Resources/Resources.vue"),
+      //   meta: {
+      //     requiresAuth: true
+      //   }
+      // }
     ]
   },
   {

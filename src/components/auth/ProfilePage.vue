@@ -1,15 +1,16 @@
 <template>
-  <div >
-    <h3>
-      <strong>{{ currentUser }}</strong> Profile
-    </h3>
+  <div class="container">
+    <h5>
+      <!-- <strong>{{ currentUser }}</strong>  -->
+      Profile
+    </h5>
 
-    <p>{{currentUserEmail}</p>
+    <!-- <p>{{currentUserEmail}}</p> -->
 
-    <p>
-      <strong>CurrentUserToken</strong>
-      {{ currentUserToken }}
-    </p>
+    <div class="profile-item">
+      <b>CurrentUserToken:</b>
+      <p class="profile-item__desc">{{ currentUserToken }}</p>
+    </div>
   </div>
 </template>
 
@@ -22,12 +23,6 @@ export default {
     }
   },
 
-  methods: {
-    currentUserEmail() {
-      let email = this.email;
-    }
-  },
-
   mounted() {
     // if (!this.currentUser) {
     //   this.$router.push("/login");
@@ -35,3 +30,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "src/assets/styles/main.scss";
+
+.profile-item__desc {
+  word-wrap: break-word;
+  width: 100%;
+}
+</style>

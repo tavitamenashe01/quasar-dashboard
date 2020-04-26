@@ -3,13 +3,7 @@
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <div class="wrapper">
         <q-list>
-          <q-item-label
-            header
-            class="text-grey-1 nav-label"
-            style="position: relative"
-          >
-            Navigation
-          </q-item-label>
+          <q-item-label header class="text-grey-1 nav-label" style="position: relative">Navigation</q-item-label>
 
           <q-item clickable to="/">
             <q-item-section>
@@ -24,7 +18,7 @@
 
           <q-item clickable to="/tables">
             <q-item-section>
-              <div class="row col items-center ">
+              <div class="row col items-center">
                 <q-icon name="grid_on" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">Table</q-item-label>
@@ -33,17 +27,11 @@
             </q-item-section>
           </q-item>
 
-          <q-item-label
-            header
-            class="text-grey-1 nav-label"
-            style="position: relative"
-          >
-            Me
-          </q-item-label>
+          <q-item-label header class="text-grey-1 nav-label" style="position: relative">Me</q-item-label>
 
           <q-item clickable to="/userProfile">
             <q-item-section>
-              <div class="row col items-center ">
+              <div class="row col items-center">
                 <q-icon name="person" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">User Profile</q-item-label>
@@ -54,7 +42,7 @@
 
           <q-item clickable to="/calendar">
             <q-item-section>
-              <div class="row col items-center ">
+              <div class="row col items-center">
                 <q-icon name="event" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">Calendar</q-item-label>
@@ -63,21 +51,11 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable to="/todo">
-            <q-item-section>
-              <div class="row col items-center ">
-                <q-icon name="assignment" color="grey-1" size="24px" />
-                <div class="q-pl-md">
-                  <q-item-label class="link-label">To do list</q-item-label>
-                </div>
-              </div>
-            </q-item-section>
-          </q-item>
-
+     
 
           <q-item clickable to="/map">
             <q-item-section>
-              <div class="row col items-center ">
+              <div class="row col items-center">
                 <q-icon name="place" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">Map</q-item-label>
@@ -86,24 +64,33 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable to="/repos">
+          <q-item clickable to="/searchRepos">
             <q-item-section>
-              <div class="row col items-center ">
-                <q-icon name="favorite" color="grey-1" size="24px" />
+              <div class="row col items-center">
+                <q-icon name="search" color="grey-1" size="24px" />
                 <div class="q-pl-md">
-                  <q-item-label class="link-label">Repos</q-item-label>
+                  <q-item-label class="link-label">Search Repos</q-item-label>
                 </div>
               </div>
             </q-item-section>
           </q-item>
 
-          <q-item-label header class="text-grey-1 nav-label">
-            Pages
-          </q-item-label>
+          <q-item clickable to="/cards">
+            <q-item-section>
+              <div class="row col items-center">
+                <q-icon name="style" color="grey-1" size="24px" />
+                <div class="q-pl-md">
+                  <q-item-label class="link-label">Cards</q-item-label>
+                </div>
+              </div>
+            </q-item-section>
+          </q-item>
+
+          <q-item-label header class="text-grey-1 nav-label">Pages</q-item-label>
 
           <q-item clickable to="/login">
             <q-item-section>
-              <div class="row col items-center ">
+              <div class="row col items-center">
                 <q-icon name="lock" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">Login</q-item-label>
@@ -114,7 +101,7 @@
 
           <q-item clickable to="/register">
             <q-item-section>
-              <div class="row col items-center ">
+              <div class="row col items-center">
                 <q-icon name="account_circle" color="grey-1" size="24px" />
                 <div class="q-pl-md">
                   <q-item-label class="link-label">Register</q-item-label>

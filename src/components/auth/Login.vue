@@ -36,7 +36,7 @@
             </template>
           </q-input>
 
-          <div class="row justify-center">
+          <div class="auth-btn row justify-center">
             <div class="col">
               <q-btn label="sign in" type="submit" color="primary" />
             </div>
@@ -113,5 +113,19 @@ export default {
 
 .registerNow-link {
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
+  .auth-btn button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .auth-btn {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

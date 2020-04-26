@@ -37,9 +37,7 @@
               class="q-ml-md"
               type="submit"
               name="action"
-            >
-              <q-icon name="send" size="15px"></q-icon>
-            </q-btn>
+            />
           </div>
         </div>
       </q-form>
@@ -153,9 +151,6 @@ import Vue from "vue";
 import { Loading, QSpinnerGears } from "quasar";
 
 Loading.show();
-// Loading.show({
-//   spinner: QSpinnerGears
-// });
 Loading.hide();
 
 export default {
@@ -294,4 +289,20 @@ export default {
 
 <style lang="scss">
 @import "src/assets/styles/main.scss";
+
+@media screen and (max-width: 768px) {
+  .nav-wrapper {
+    width: 20px;
+    margin: 50px auto;
+  }
+  .col-12 {
+    width: 200px !important;
+  }
+  .nav-wrapper__title {
+    padding: 0 90px;
+  }
+  .collection {
+    padding: 0;
+  }
+}
 </style>
